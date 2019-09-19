@@ -98,7 +98,9 @@ public:
         if(!hasCycle){
             return NULL;
         }
-        //Get index of the node at which the loop starts by resetting slow
+        //Essentially, the distance from the beginning to the first node of the cycle
+        //is equivalent to the distance from the meeting point to the first node of the cycle
+        //Using this logic, the slowPtr is reset and each Ptr is incremented by 1 until they meet
         slowPtr = head;
         while(fastPtr && slowPtr != fastPtr){
             slowPtr = slowPtr->next;
